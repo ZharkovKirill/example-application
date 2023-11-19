@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "njpwerner.autodocstring",
+        "ms-vscode.cpptools-extension-pack",
+        "marus25.cortex-debug",
+        "sanaajani.taskrunnercode"
+    ]
+}
