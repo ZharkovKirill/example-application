@@ -7,7 +7,7 @@
 /dts-v1/;
 #include <st/f4/stm32f429Xi.dtsi>
 #include <st/f4/stm32f429zitx-pinctrl.dtsi>
-#include "arduino_r3_connector.dtsi"
+ 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
@@ -47,7 +47,7 @@
 			zephyr,code = <INPUT_KEY_0>;
 		};
 	};
-
+ 
 	aliases {
 		led0 = &green_led_1;
 		led1 = &blue_led_1;
@@ -140,7 +140,7 @@
 	status = "disabled";
 };
 &usart6 {
-	pinctrl-0 = <&usart6_tx_pg14 &usart6_rx_pg9>;
+	pinctrl-0 = <&usart6_tx_pc6 &usart6_rx_pc7>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
 	status = "okay";
@@ -161,6 +161,10 @@ zephyr_udc0: &usbotg_fs {
 		pinctrl-0 = <&tim1_ch3_pe13>;
 		pinctrl-names = "default";
 	};
+};
+
+&gpioc {
+	status = "okay";
 };
 
 &rtc {

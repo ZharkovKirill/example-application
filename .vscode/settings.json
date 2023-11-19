@@ -4,5 +4,31 @@
         "gpio.h": "c",
         "cpu.h": "c"
     },
-    "cortex-debug.variableUseNaturalFormat": true
+    "cortex-debug.variableUseNaturalFormat": true,
+    "taskExplorer.exclude": [
+        "**/.vscode-test/**",
+        "**/Assets/**",
+        "**/bin/**",
+        "**/build/**",
+        "**/dist/**",
+        "**/doc/**",
+        "**/example/**",
+        "**/examples/**",
+        "**/ext/**",
+        "**/obj/**",
+        "**/out/**",
+        "**/output/**",
+        "**/packages/**",
+        "**/release/**",
+        "**/releases/**",
+        "**/samples/**",
+        "**/sdks/**",
+        "**/static/**",
+        "**/target/**",
+        "**/test/**",
+        "**/third_party/**",
+        "**/vendor/**",
+        "**/work/**",
+        "/c:/prj/worksapce_zep/axel-workspace/example-application/.vscode/tasks.json"
+    ]
 }
