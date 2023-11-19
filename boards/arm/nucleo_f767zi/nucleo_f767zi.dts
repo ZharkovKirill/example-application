@@ -22,8 +22,8 @@
 	compatible = "st,stm32f767zi-nucleo";
 
 	chosen {
-		zephyr,console = &usart3;
-		zephyr,shell-uart = &usart3;
+		zephyr,console = &usart6;
+		zephyr,shell-uart = &usart6;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,code-partition = &slot0_partition;
@@ -111,7 +111,7 @@
 };
 
 &usart6 {
-	pinctrl-0 = <&usart6_tx_pg14 &usart6_rx_pg9>;
+	pinctrl-0 = <&usart6_tx_pc6 &usart6_rx_pc7>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
 	status = "okay";
@@ -149,7 +149,7 @@ zephyr_udc0: &usbotg_fs {
 	 * WARNING: The pin PA7 will conflict on selection of SPI_1 and
 	 *          ETH_STM32_HAL.
 	 */
-	status = "okay";
+	status = "disable";
 };
 
 &iwdg {
@@ -169,20 +169,7 @@ zephyr_udc0: &usbotg_fs {
 	status = "okay";
 };
 
-&adc1 {
-	pinctrl-0 = <&adc1_in0_pa0>;
-	pinctrl-names = "default";
-	st,adc-clock-source = <SYNC>;
-	st,adc-prescaler = <2>;
-	status = "okay";
-};
-
-&dac1 {
-	status = "okay";
-	pinctrl-0 = <&dac_out1_pa4>;
-	pinctrl-names = "default";
-};
-
+ 
 &rng {
 	status = "okay";
 };
