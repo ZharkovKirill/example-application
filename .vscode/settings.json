@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "byteorder.h": "c",
+        "gpio.h": "c",
+        "cpu.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true
+}

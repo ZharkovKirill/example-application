@@ -1,0 +1,87 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": ".\\build\\zephyr\\zephyr.elf",
+            "name": "Debug with ST-Link",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "servertype": "stlink",
+            "gdbPath": "C:\\Users\\kirill\\Desktop\\zephyr-sdk-0.16.3\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-gdb.exe",
+            "svdFile": ".\\stm32f7x7.svd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "interface": "swd",
+            "swoConfig":{
+                "enabled":true,
+                "source":"socket",
+                "swoFrequency": 216000000,
+    
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "binary",
+                        "label": "SWO output",
+                         
+                    }
+                ]
+            }
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": ".\\build\\zephyr\\zephyr.elf",
+            "name": "Debug with OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": ["C:\\soft\\OpenOCD-20231002-0.12.0\\share\\openocd\\scripts\\board\\st_nucleo_f7.cfg"],
+            "searchDir": [],
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "svdFile": ".\\stm32f7x7.svd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            
+          
+            //"serverArgs": ["-f C:\\soft\\OpenOCD-20231002-0.12.0\\share\\openocd\\scripts\\board\\st_nucleo_f7.cfg"],
+            "gdbPath": "C:\\Users\\kirill\\Desktop\\zephyr-sdk-0.16.3\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-gdb.exe",
+            "interface": "swd",
+            "swoConfig":{
+                "enabled":true,
+                "source":"probe",
+                "swoFrequency": 1000000,
+                "cpuFrequency": 1000000,
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "SWO output",
+                        "encoding":"ascii"
+                    }
+                ]
+            }
+            
+            
+        },
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "device": "stm32f767zi",
+            "executable": ".\\build\\zephyr\\zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd"
+        }
+    ]
+}
