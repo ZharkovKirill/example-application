@@ -46,9 +46,9 @@ command:
 
 ```shell
 # initialize my-workspace for the example-application (main branch)
-west init -m https://github.com/zephyrproject-rtos/example-application --mr main my-workspace
+west init -m https://github.com/ZharkovKirill/example-application/ --mr main axel-workspace
 # update Zephyr modules
-cd my-workspace
+cd axel-workspace
 west update
 ```
 
@@ -57,7 +57,7 @@ west update
 To build the application, run the following command:
 
 ```shell
-west build -b $BOARD app
+west build -b $BOARD apps/app
 ```
 
 where `$BOARD` is the target board.
@@ -70,7 +70,7 @@ A sample debug configuration is also provided. To apply it, run the following
 command:
 
 ```shell
-west build -b $BOARD app -- -DOVERLAY_CONFIG=debug.conf
+west build -b nucleo_f767zi  ./apps/blinky -- -DOVERLAY_CONFIG=debug
 ```
 
 Once you have built the application, run the following command to flash it:
@@ -78,11 +78,4 @@ Once you have built the application, run the following command to flash it:
 ```shell
 west flash
 ```
-
-### Testing
-
-To execute Twister integration tests, run the following command:
-
-```shell
-west twister -T tests --integration
-```
+ 
