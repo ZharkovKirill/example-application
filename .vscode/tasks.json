@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "West Build F7",
+			"label": "West Build",
 			"type": "shell",
 			"group": {
 				"kind": "build",
@@ -21,8 +21,7 @@
 				"build",
 				"-p",
 				"auto",
-				"-b",
-				"nucleo_f767zi"
+				 
 			],
 			"problemMatcher": [
 				"$gcc"
@@ -102,7 +101,7 @@
 			"id": "app",
 			"type": "promptString",
 			"description": "Choose when to run a pristine build",
-			"default": "apps\\blinky",
+			"default": "./apps/blinky",
  
 		},
 		
