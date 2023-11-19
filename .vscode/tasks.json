@@ -28,6 +28,32 @@
 			]
 		},
 		{
+			"label": "West Build Debug" ,
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"linux": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"windows": {
+				"command": "${userHome}/zephyrproject/.venv/Scripts/west.exe"
+			},
+			"osx": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"args": [
+				"build",
+				"--",
+				"-DOVERLAY_CONFIG=debug"
+				 
+			],
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
 			"label": "West Configurable Build",
 			"type": "shell",
 			"group": {

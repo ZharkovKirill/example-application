@@ -7,6 +7,37 @@
         {
             "cwd": "${workspaceFolder}",
             "executable": ".\\build\\zephyr\\zephyr.elf",
+            "name": "Debug with ST-Link F4",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "servertype": "stlink",
+            "gdbPath": "C:\\Users\\kirill\\Desktop\\zephyr-sdk-0.16.3\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-gdb.exe",
+            "svdFile": ".\\STM32F429.svd",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "interface": "swd",
+            "swoConfig":{
+                "enabled":true,
+                "source":"socket",
+                "swoFrequency": 216000000,
+    
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "binary",
+                        "label": "SWO output",
+                         
+                    }
+                ]
+            }
+        },
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": ".\\build\\zephyr\\zephyr.elf",
             "name": "Debug with ST-Link",
             "request": "launch",
             "type": "cortex-debug",
