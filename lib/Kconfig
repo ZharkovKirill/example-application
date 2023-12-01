@@ -4,5 +4,6 @@
 menu "Libraries"
 
 rsource "custom_lib/Kconfig"
+rsource "witmotion_protocol/Kconfig"
 
 endmenu

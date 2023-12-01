@@ -98,7 +98,30 @@
 			"problemMatcher": [
 				"$gcc"
 			]
-		}
+		},
+		{
+			"label": "West Config",
+			"type": "shell",
+			"linux": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"windows": {
+				"command": "${userHome}/zephyrproject/.venv/Scripts/west.exe"
+			},
+			"osx": {
+				"command": "${userHome}/zephyrproject/.venv/bin/west"
+			},
+			"args": [
+				"flash",
+				"build",
+				 "-t" ,
+				 "guiconfig"
+			],
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		
 	],
 	"inputs": [
 		{

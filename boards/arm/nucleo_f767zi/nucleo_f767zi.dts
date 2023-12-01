@@ -107,13 +107,13 @@
 	pinctrl-0 = <&usart3_tx_pd8 &usart3_rx_pd9>;
 	pinctrl-names = "default";
 	current-speed = <115200>;
-	status = "disable";
+	status = "disabled";
 };
 
 &usart6 {
 	pinctrl-0 = <&usart6_tx_pc6 &usart6_rx_pc7>;
 	pinctrl-names = "default";
-	current-speed = <115200>;
+	current-speed = <460800>;
 	status = "okay";
 };
 
@@ -149,7 +149,7 @@ zephyr_udc0: &usbotg_fs {
 	 * WARNING: The pin PA7 will conflict on selection of SPI_1 and
 	 *          ETH_STM32_HAL.
 	 */
-	status = "disable";
+	status = "disabled";
 };
 
 &iwdg {
@@ -249,5 +249,13 @@ zephyr_udc0: &usbotg_fs {
 };
 
 &vbat {
+	status = "okay";
+};
+
+&dma2 {
+	status = "okay";
+};
+
+&dma1 {
 	status = "okay";
 };

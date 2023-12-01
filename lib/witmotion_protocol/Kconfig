@@ -1,0 +1,9 @@
+# Copyright (c) 2021, Legrand North America, LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+config WITMOTION_PROTOCOL
+	bool "witmotion_protocol Support"
+ 
+	help
+	  This option enables the custom_lib library
+ 
